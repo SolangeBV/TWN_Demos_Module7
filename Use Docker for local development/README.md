@@ -3,7 +3,7 @@
 - ``docker pull mongo`` -> to pull the mongo db image from DockerHub
 - ``docker pull mongo-express`` -> to pull the mongo-express image (this is a GUI for Mongo)
 - ``docker network create mongo-network`` -> to create a custom network where the containers will run
-- Dockerfile -> summarizes most of the information needed to run the container
+- Dockerfile -> summarizes most of the information needed to run the application
 
 ## Run Nodejs application in Docker container and connect to MongoDB database container locally
 - ``node server.js`` to run the Node.js app (available on localhost:3000)
