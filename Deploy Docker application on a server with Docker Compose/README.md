@@ -1,3 +1,5 @@
+**Note**: this is the final version of the app at the end of this demo: to TWN_Demos_Module7/Deploy Docker application on a server with Docker Compose/js-app
+
 ## Copy Docker-compose file to remote server
 - Prod scenario: we need to pull my-app image from AWS and the mongo-db and mongo-express image from Docker-Hub into a server
 - In the docker-compose.yaml set the full name for the image of "my-app" (replace the content that has curly brackets)
