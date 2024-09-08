@@ -13,5 +13,17 @@
 - To delete an image: ``docker rm containerId`` + ``docker rmi imageId`` (we need to delete and recreate an image every time we make changes to the Dockerfile)
 
 ## Create private Docker registry on AWS (Amazon ECR)
+- Docker registry = create private repository for Docker
+- aws.amazon.com > sign in > search for "Elastic Container Registry" > Get Started
+- **NB**: On AWS ECR you have one repository per image (but each repo can contain multiple versions of an image)
+- push image into AWS repo:
+  - AWS CLI needs to be installed (See module 9, lesson 11)
+  - AWS Credentials need to be configured
+  - create credentials to login to AWS repo from pc:
+    ``aws ecr get-login-password --region eu-sentral-1 | docker login --username AWS --password-stdin 454342277166.dkr.ecr.eu-central-1.amayonaws.com`` -> you can find this command on AWS, on the "Push commands for my-app"
 
 ## Push Docker image to this private repository
+- Tag your image so you can push the image to the repository:
+  ``docker tag my-app:latest 454342277166.dkr.ecr.eu-central-1.amazonaws.com/my-app:latest`` -> you can find this command on AWS, on the "Push commands for my-app"
+- Push the image to the newly created AWS repository:
+  ``docker push 454342277166.dkr.eu-central-1.amazonaws.com/my-app:latest`` -> you can find this command on AWS, on the "Push commands for my-app"
